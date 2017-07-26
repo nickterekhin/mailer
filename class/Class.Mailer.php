@@ -24,24 +24,27 @@ class Mailer extends BaseSystem
         try {
             if (isset($_POST['send-message']) && $_POST['send-message'] == 1) {
 
-                $attachment = array();
-                $index = 0;
-                if(isset($_FILES['attachment'])) {
-                    foreach ($_FILES['attachment']['name'] as $key => $file) {
-                        $attachment[$index]['name'] = $file;
-                        $attachment[$index]['tmp_name'] = $_FILES['attachment']['tmp_name'][$key];
-                        $index++;
+                if(!isset($_POST['mail-from']) || empty($_REQUEST['mail-from']))
+                {
+                    $this->warn[] = "Please set From Address";
+                }
+                if(empty($this->warn)) {
+                    $attachment = array();
+                    $index = 0;
+                    if (isset($_FILES['attachment'])) {
+                        foreach ($_FILES['attachment']['name'] as $key => $file) {
+                            $attachment[$index]['name'] = $file;
+                            $attachment[$index]['tmp_name'] = $_FILES['attachment']['tmp_name'][$key];
+                            $index++;
+                        }
+                    }
+
+                    if ($this->mailer->sendHtml($_REQUEST['mail-to'], $_REQUEST['mail-subject'], $_REQUEST['mail-body'], $attachment)) {
+                        $this->success[] = "Message sent successfully";
+                    } else {
+                        $this->warn[] = "Message was not sent";
                     }
                 }
-
-                if($this->mailer->sendHtml($_REQUEST['mail-to'], $_REQUEST['mail-subject'], $_REQUEST['mail-body'], $attachment))
-                {
-                    $this->success[] = "Message sent successfully";
-                }else
-                {
-                    $this->warn[] = "Message was not sent";
-                }
-
             }
         }catch (phpmailerException $ex)
         {
