@@ -2,15 +2,12 @@
     var qty =0;
     $(document).ready(function(){
 
-
-
         $(".file-action-add").click(function(){
             var bodyId = $(this).attr("data-upload-body");
 
              qty += 1;
             fileUploadElement(qty).appendTo($("#"+bodyId));
             $(".file-action-del").click(function(){
-                var fileItemId = $(this).attr("data-id");
                 $(this).parent().remove();
             });
             $(".file-upload").change(function(){
@@ -101,7 +98,7 @@
 
             <div class="form-group">
                 <div class="col-md-12 text-right">
-            <button type="submit" class="btn btn-success btn-md"><i class="fa fa-floppy-o"></i>Send Message</button>
+            <button type="submit" class="btn btn-success btn-md"><i class="fa fa-envelope"></i>Send Message</button>
                     </div>
                 </div>
         </div>
