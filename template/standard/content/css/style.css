@@ -1,0 +1,56 @@
+i.fa:not(.fa-minus):not(.fa-plus){
+    margin-right:5px;
+}
+.btn-file
+{
+    position:relative;
+    overflow:hidden;
+}
+
+.btn-file input[type=file]
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+.file-action{
+    cursor: pointer;
+    padding: 3px;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+.file-action-add{
+    background-color: #008600;
+
+}
+
+.file-action-del{
+    background-color: #8e0000;
+}
+.file-action .fa{
+    padding: 2px;
+    border-radius: 3px;
+    color: #fff;
+    border: 3px solid #fff;
+}
+.file-item{
+    padding: 10px;
+    border-bottom: 1px solid #d7d7d7;
+}
+.file-item:nth-child(2n)
+{
+    background-color: #eaeaea;
+}
+.file-item span + span{
+    margin-left:10px;
+}
