@@ -51,7 +51,7 @@ class Mailer extends BaseSystem
             $this->warn[] = $ex->errorMessage();
         }
         $this->tmpl->assign("warn",$this->warn);
-        $this->tmpl->assign("success",$this->warn);
+        $this->tmpl->assign("success",$this->success);
         $this->tmpl->assign("from",$this->mailer->From);
 
 
