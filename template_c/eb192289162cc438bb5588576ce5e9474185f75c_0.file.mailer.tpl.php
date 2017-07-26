@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-07-26 19:50:28
+/* Smarty version 3.1.30, created on 2017-07-26 20:31:19
   from "/Volumes/Data/htdocs/mailer/template/standard/pages/mailer.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5978c854a79b86_90529565',
+  'unifunc' => 'content_5978d1e79a8e76_49800037',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'eb192289162cc438bb5588576ce5e9474185f75c' => 
     array (
       0 => '/Volumes/Data/htdocs/mailer/template/standard/pages/mailer.tpl',
-      1 => 1501087824,
+      1 => 1501090278,
       2 => 'file',
     ),
   ),
@@ -20,13 +20,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5978c854a79b86_90529565 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5978d1e79a8e76_49800037 (Smarty_Internal_Template $_smarty_tpl) {
 echo '<script'; ?>
  type="text/javascript">
     var qty =0;
     $(document).ready(function(){
-
-
 
         $(".file-action-add").click(function(){
             var bodyId = $(this).attr("data-upload-body");
@@ -34,7 +32,6 @@ echo '<script'; ?>
              qty += 1;
             fileUploadElement(qty).appendTo($("#"+bodyId));
             $(".file-action-del").click(function(){
-                var fileItemId = $(this).attr("data-id");
                 $(this).parent().remove();
             });
             $(".file-upload").change(function(){
@@ -147,7 +144,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 
             <div class="form-group">
                 <div class="col-md-12 text-right">
-            <button type="submit" class="btn btn-success btn-md"><i class="fa fa-floppy-o"></i>Send Message</button>
+            <button type="submit" class="btn btn-success btn-md"><i class="fa fa-envelope"></i>Send Message</button>
                     </div>
                 </div>
         </div>

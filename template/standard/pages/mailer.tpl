@@ -26,7 +26,7 @@
     {
         var element = "<div class='file-item' id="+index+">";
             element+="<span class='btn btn-primary btn-file'>";
-            element +="<i class='fa fa-upload'></i>Upload File 1<input type='file' id='file-upload-"+index+"' name='attachment["+index+"]' class='file-upload' data-action-id='file-action-"+index+"'>";
+            element +="<i class='fa fa-upload'></i>Upload File<input type='file' id='file-upload-"+index+"' name='attachment["+index+"]' class='file-upload' data-action-id='file-action-"+index+"'>";
             element+= "</span>";
             element+= "<span id='file-name-text-"+index+"' class='file-name-text'>";
             element+="</span>";
